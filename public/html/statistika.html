@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="bs-BA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../javascript/StatistikaNekretnina.js"></script> 
+    <script src="../javascript/statistika.js"></script>
+    <title>Statistika</title>
+</head>
+<body>
+    <form>
+        <h3>Raspon perioda: </h3>
+            <label for="periodOd">Unesite od: </label>
+            <input type="number" min="0" required id="periodOd"><br>
+            <label for="periodDo">Unesite do: </label>
+            <input type="number" min="0" required id="periodDo"><br>
+            <button type="button" onclick="dodajPeriod()" id="dugmeZaDodavanjeRaspona">Dodaj raspon perioda</button>
+        <hr>
+        <h3>Raspon cijene: </h1>
+            <label for="cijenaOd">Unesite od: </label>
+            <input type="number" min="0" required id="cijenaOd"><br>
+            <label for="cijenaDo">Unesite do: </label>
+            <input type="number" min="0" required id="cijenaDo"><br>
+            <button type="button" onclick="dodajCijenu()">Dodaj cjenovni raspon</button><br><br>
+        <button type="button" onclick="iscrtajHistogram()">Nacrtaj histogram</button>
+        <button type="button" onclick="ponistiUnos()">Ponisti unesene podatke</button>
+        <hr>
+    </form>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+</body>
+</html>

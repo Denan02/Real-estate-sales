@@ -1,0 +1,18 @@
+Zadatak 1
+Što se tiče zadatka 1 nemam neki primjedbi na preuzeti kod, mogu reći da se je morao dodati link na ikonice, pošto kada se uradi hover nestane text 
+i ostanu samo ikonice.
+
+Zadatak2
+Ono sto ja nisam uspio jeste da postignem isti efekat sa flex kao sto je grid. Ono sto sam dodao je flex-wrap: wrap; da bi moglo prelaziti u novi red.
+Kada predje u novi red taj element bude na sredini, te to nisam uspio staviti sa lijeve strane. Ako promijenim marginu ili nesto slicno onda se ni jedan element ne 
+prikazuje kako bi trebalo. Tako da bi rekao da nije bas moguce identicno postici sa flex kao sto je grid efekt. Naravno to ne znaci da je jedan bolji od drugog, vec da svaki
+ima svoje prednosti i mane.
+
+Zadatak3
+Sto se tiče 3. zadatka, bilo je veoma lagano za realizirati, jer je za upite bilo postavljeno kao flex te je nas zadatak bio samo
+da postavimo koliku će sirinu zauzimati prikazani element. Te ako je ta sirina takva da moze stati samo jedan element, onda se oni prikazuju jedan ispod druog,
+ako mogu stati dva onda se prikazuju po dva itd...
+Zadatak4
+Ovo je zadatak koji je sigurno bio najkompleksniji za izvesti. Ono sto sam pokusavao jeste da uradim pomocu flex boxa, koji ima mogučnost da prelazi u novi red. 
+Ovo rjesenje mi je izgledalo kao najbolje, ali se dešava kada viskokaVijest i kvadratnaVijest stoje jedna pored druge prostor koji ostane prazan
+do visine visoke nije moguće popuniti bez javascrip-a. Kasnije sam stavio grid i "hard-codirao", kako je navedeno na forumu.

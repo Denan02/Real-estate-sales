@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+iframe {
+    border: none; 
+    width: 100%;
+    height: 50px;
+}
+#kontejnerVijesti{
+    display: grid;
+}
+
+.glavnaVijest {
+    width: 100%;
+    background-color: blue;
+    border: 1px solid black;
+}
+.visokaVijest {
+    background-color: yellow;
+    aspect-ratio: 1 / 2;
+    border: 1px solid black;
+}
+.kvadratnaVijest {
+    background-color: pink;
+    aspect-ratio: 1 / 1;
+    border: 1px solid black;
+}
+
+
+@media (min-width: 800px) {
+    .glavnaVijest{
+        aspect-ratio: 2 / 1;
+    }
+    .visokaVijest{
+        width: 25%;
+    }
+    .kvadratnaVijest{
+        width: 25%;
+    }
+    #kontejnerVijesti {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+    }
+    .glavnaVijest {
+        grid-column: 1 / -1;
+        aspect-ratio: 2 / 1;
+        background-color: blue;
+    }
+    #visoka1 {
+        grid-row: 2 / span 4;
+        grid-column: 1 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna1 {
+        grid-row: 2 / span 2;
+        grid-column: 3 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna2 {
+        grid-row: 2 / span 2;
+        grid-column: 5 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna3 {
+        grid-row: 4 / span 2;
+        grid-column: 3 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna4 {
+        grid-row: 4 / span 2;
+        grid-column: 5 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #visoka2 {
+        grid-row: 2 / span 4;
+        grid-column: 7 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna5 {
+        grid-row: 6 / span 2;
+        grid-column: 1 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna6 {
+        grid-row: 6 / span 2;
+        grid-column: 3 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna7 {
+        grid-row: 8 / span 2;
+        grid-column: 1 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #kvadratna8 {
+        grid-row: 8 / span 2;
+        grid-column: 3 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #visoka3 {
+        grid-row: 6 / span 4;
+        grid-column: 5 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+    
+    #visoka4 {
+        grid-row: 6 / span 4;
+        grid-column: 7 / span 2;
+        height: 100%;
+        width: 100%;
+    }
+
+}
+@media (max-width: 800px) {
+    .glavnaVijest{
+        aspect-ratio: 1 / 1;
+    }
+    .visokaVijest{
+        width: 50%;
+    }
+    .kvadratnaVijest{
+        width: 50%;
+    }
+    #kontejnerVijesti{
+        grid-template-columns: repeat(4, 1fr); 
+        grid-template-rows: auto;
+        grid-template-areas: 
+          "glavna glavna glavna glavna"
+          "visoka1 visoka1 kvadratna1 kvadratna1"
+          "visoka1 visoka1 kvadratna2 kvadratna2"
+          "kvadratna3 kvadratna3 visoka2 visoka2"
+          "kvadratna4 kvadratna4 visoka2 visoka2"
+          "kvadratna5 kvadratna6 kvadratna7 kvadratna8"
+          "prazan prazan prazan prazan"
+          "visoka3 visoka3 visoka4 visoka4";
+      }
+    
+      .glavnaVijest {
+        grid-area: glavna; 
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+      #visoka1 {
+        grid-area: visoka1; 
+        aspect-ratio: 1 / 2;
+        height: 100%;
+        width: 100%;
+      }
+      #kvadratna1 {
+        grid-area: kvadratna1; 
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+    
+      #kvadratna2 {
+        grid-area: kvadratna2;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+      #kvadratna3 {
+        grid-area: kvadratna3;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+    
+      #kvadratna4 {
+        grid-area: kvadratna4;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+      #visoka2 {
+        grid-area: visoka2;
+        aspect-ratio: 1 / 2;
+        height: 100%;
+        width: 100%;
+      }
+      #kvadratna5 {
+        grid-row: 6;
+        grid-column: 1 / span 2;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+      #kvadratna6 {
+        grid-row: 6;
+        grid-column: 3 / span 2;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+    
+      #kvadratna7 {
+        grid-row: 7;
+        grid-column: 1 / span 2;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+      #kvadratna8 {
+        grid-row: 7;
+        grid-column: 3 / span 2;
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        width: 100%;
+      }
+      .prazan {
+        grid-row: 8;
+        grid-column: 1 / -1;
+        height: 100%;
+        width: 100%;
+      }
+      #visoka3 {
+        grid-row: 9;
+        grid-column: 1 / span 2;
+        aspect-ratio: 1 / 2;
+        height: 100%;
+        width: 100%;
+      }
+    
+      #visoka4 {
+        grid-row: 9;
+        grid-column: 3 / span 2;
+        aspect-ratio: 1 / 2;
+        height: 100%;
+        width: 100%;
+      }
+}
+
+

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test StatistikaNekretnina</title>
+    <script src="../javascript/StatistikaNekretnina.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Test StatistikaNekretnina</h1>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    <script>
+        // Kreiranje objekta SpisakNekretnina
+        
+        // Testiranje StatistikaNekretnina
+        let statistika = StatistikaNekretnina();
+        
+        // Inicijalizacija podataka (ako su potrebni parametri)
+        const listaNekretnina = [{
+            id: 1,
+            tip_nekretnine: "Stan",
+            naziv: "Useljiv stan Sarajevo",
+            kvadratura: 58,
+            cijena: 232000,
+            tip_grijanja: "plin",
+            lokacija: "Novo Sarajevo",
+            godina_izgradnje: 2019,
+            datum_objave: "01.10.2023.",
+            opis: "Sociis natoque penatibus.",
+            upiti: [{
+                korisnik_id: 1,
+                tekst_upita: "Nullam eu pede mollis pretium."
+            },
+            {
+                korisnik_id: 2,
+                tekst_upita: "Phasellus viverra nulla."
+            }]
+        },{
+            id: 1,
+            tip_nekretnine: "Stan",
+            naziv: "Useljiv stan Sarajevo",
+            kvadratura: 58,
+            cijena: 32000,
+            tip_grijanja: "plin",
+            lokacija: "Novo Sarajevo",
+            godina_izgradnje: 2019,
+            datum_objave: "01.10.2009.",
+            opis: "Sociis natoque penatibus.",
+            upiti: [{
+                korisnik_id: 1,
+                tekst_upita: "Nullam eu pede mollis pretium."
+            },
+            {
+                korisnik_id: 2,
+                tekst_upita: "Phasellus viverra nulla."
+            }]
+        },{
+            id: 1,
+            tip_nekretnine: "Stan",
+            naziv: "Useljiv stan Sarajevo",
+            kvadratura: 58,
+            cijena: 232000,
+            tip_grijanja: "plin",
+            lokacija: "Novo Sarajevo",
+            godina_izgradnje: 2019,
+            datum_objave: "01.10.2003.",
+            opis: "Sociis natoque penatibus.",
+            upiti: [{
+                korisnik_id: 1,
+                tekst_upita: "Nullam eu pede mollis pretium."
+            },
+            {
+                korisnik_id: 2,
+                tekst_upita: "Phasellus viverra nulla."
+            }]
+        },
+        {
+            id: 2,
+            tip_nekretnine: "Kuća",
+            naziv: "Mali poslovni prostor",
+            kvadratura: 20,
+            cijena: 70000,
+            tip_grijanja: "struja",
+            lokacija: "Centar",
+            godina_izgradnje: 2005,
+            datum_objave: "20.08.2023.",
+            opis: "Magnis dis parturient montes.",
+            upiti: [{
+                korisnik_id: 2,
+                tekst_upita: "Integer tincidunt."
+            }
+            ]
+        },
+        {
+            id: 3,
+            tip_nekretnine: "Kuća",
+            naziv: "Mali poslovni prostor",
+            kvadratura: 20,
+            cijena: 70000,
+            tip_grijanja: "struja",
+            lokacija: "Centar",
+            godina_izgradnje: 2005,
+            datum_objave: "20.08.2023.",
+            opis: "Magnis dis parturient montes.",
+            upiti: [{
+                korisnik_id: 2,
+                tekst_upita: "Integer tincidunt."
+            }
+            ]
+        },
+        {
+            id: 4,
+            tip_nekretnine: "Kuća",
+            naziv: "Mali poslovni prostor",
+            kvadratura: 20,
+            cijena: 70000,
+            tip_grijanja: "struja",
+            lokacija: "Centar",
+            godina_izgradnje: 2005,
+            datum_objave: "20.08.2023.",
+            opis: "Magnis dis parturient montes.",
+            upiti: [{
+                korisnik_id: 2,
+                tekst_upita: "Integer tincidunt."
+            }
+            ]
+        }]
+
+        const listaKorisnika = [{
+            id: 1,
+            ime: "Neko",
+            prezime: "Nekic",
+            username: "username1",
+        },
+        {
+            id: 2,
+            ime: "Neko2",
+            prezime: "Nekic2",
+            username: "username2",
+        }]
+        statistika.init(listaNekretnina, listaKorisnika);
+
+
+        let kriterij = { tip_nekretnine: 'Kuća' };
+        console.log('Prosječna kvadratura:', statistika.prosjecnaKvadratura(kriterij)); // Trebalo bi ispisati 70
+
+        let a = statistika.outlier(kriterij, "id");
+        console.log('Prosječna kvadratura:', a); // Trebalo bi ispisati 70
+
+        let b = statistika.mojeNekretnine(listaKorisnika[1]);
+        console.log(b);
+
+        let c = statistika.histogramCijena([{od:2000,do:2010},{od:2010,do:2024}],[{od:10000,do:150000},{od:150000,do:1000000}]);
+        console.log(c);
+
+        const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+    </script>
+</body>
+</html>
